@@ -1,0 +1,4 @@
+entity_id,entity_type,name_zh,name_en,aliases,country_code,related_knowledge_ids
+ENT-TEAM-BRA,team,巴西,Brazil,桑巴军团|巴西国家队,BRA,
+ENT-WC-2022,tournament,2022卡塔尔世界杯,2022 FIFA World Cup,卡塔尔世界杯|2022世界杯,,WC-GLOS-00001
+ENT-TERM-VAR,term,视频助理裁判,Video Assistant Referee,VAR|视频裁判,,WC-GLOS-00001

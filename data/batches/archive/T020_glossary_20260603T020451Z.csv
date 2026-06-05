@@ -1,0 +1,2 @@
+id,category_l1,category_l2,category_l3,scope,priority,question,question_aliases,answer_short,answer_detail,answer_format,keywords,tags,entities,related_ids,difficulty,era_start,era_end,region,language,fact_type,confidence,source_type,source_ref,content_flags,updated_at
+WC-GLOS-00001,术语与百科,基础规则,越位,football_general,4,什么是越位?,越位定义|越位是什么意思,进攻球员在传球瞬间比倒数第二名防守球员更接近球门线且参与进攻即构成越位。,越位判定的核心是传球瞬间的位置关系；处于本方半场、接界外球或角球等情况不构成越位。,definition,"越位,规则,位置,进攻",基础,,,入门,,,全球,zh-CN,term,official,IFAB,IFAB Laws of the Game 2024/25,,2026-06-03
