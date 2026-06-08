@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Report progress for the World Cup knowledge base project from data/tasks.csv.
+Report progress for the World Cup knowledge base project from docs/maintainers/tasks.csv.
 
 Usage:
   python scripts/progress_report.py
@@ -8,7 +8,7 @@ Usage:
   python scripts/progress_report.py --next 5
   python scripts/progress_report.py --phase 2
 
-Network: none (local structured data). Outbound HTTP must use fetch_utils.RateLimitedFetcher (>=1s/request); see docs/data-collection-policy.md and .cursor/rules/world-cup-data-collection.mdc."""
+Network: none (local structured data). Outbound HTTP must use fetch_utils.RateLimitedFetcher (>=1s/request); see docs/maintainers/data-collection-policy.md and .cursor/rules/world-cup-data-collection.mdc."""
 
 from __future__ import annotations
 
@@ -363,8 +363,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--tasks",
         type=Path,
-        default=project_root() / "data" / "tasks.csv",
-        help="Path to tasks.csv (default: data/tasks.csv)",
+        default=project_root() / "docs" / "maintainers" / "tasks.csv",
+        help="Path to tasks.csv (default: docs/maintainers/tasks.csv)",
     )
     parser.add_argument("--json", action="store_true", help="Output JSON instead of text")
     parser.add_argument("--phase", type=int, help="Filter phase section to one phase")

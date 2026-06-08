@@ -1,9 +1,9 @@
 task_id,phase,phase_name,task_order,task_name,task_type,output_file,target_rows,batch_size,status,priority,depends_on,acceptance_criteria,data_source_hint,estimated_hours,actual_rows,owner,notes
-T000,0,项目基建,1,CSV表头与Schema定稿,design,docs/csv-schema-design.md,0,0,done,P0,,26列表头文档齐全且评审通过,,2,0,,
+T000,0,项目基建,1,CSV表头与Schema定稿,design,docs/maintainers/csv-schema-design.md,0,0,done,P0,,26列表头文档齐全且评审通过,,2,0,,
 T001,0,项目基建,2,创建拒答策略表,data,data/refusal_policy.csv,3,3,done,P0,T000,含赌博/投注意图与友好拒答话术,,1,3,,
 T002,0,项目基建,3,创建知识库空模板,data,data/knowledge_template.csv,0,0,done,P0,T000,表头与Schema一致,,0,0,,
-T003,0,项目基建,4,编写任务主计划,planning,docs/task-plan.md,0,0,done,P0,T000,分阶段任务表与里程碑清晰,,2,0,,
-T004,0,项目基建,5,定义ID与命名规范,design,docs/id-conventions.md,0,0,done,P0,T000,各分类缩写与序号规则文档化,,1,0,,
+T003,0,项目基建,4,编写任务主计划,planning,docs/maintainers/task-plan.md,0,0,done,P0,T000,分阶段任务表与里程碑清晰,,2,0,,
+T004,0,项目基建,5,定义ID与命名规范,design,docs/maintainers/id-conventions.md,0,0,done,P0,T000,各分类缩写与序号规则文档化,,1,0,,
 T005,0,项目基建,6,编写CSV校验脚本,infra,scripts/validate_knowledge.py,0,0,done,P0,T000,校验必填列/枚举值/ID唯一性/无赌博关键词,,4,0,,
 T006,0,项目基建,7,编写批量合并脚本,infra,scripts/merge_batches.py,0,0,done,P1,T005,支持按batch文件合并到主CSV,,3,0,,
 T007,0,项目基建,8,编写进度统计脚本,infra,scripts/progress_report.py,0,0,done,P1,T003,读取tasks.csv输出完成率与缺口,,2,0,,
@@ -16,7 +16,7 @@ T014,1,实体与索引,5,采集世界杯届次实体(2010-2026),data,data/entiti
 T015,1,实体与索引,6,采集传奇球员实体(第一批),data,data/entities.csv,100,100,done,P1,T008,世界杯相关Top100球员标准名,,4,100,,
 T016,1,实体与索引,7,采集传奇球员实体(第二批),data,data/entities.csv,100,100,done,P2,T015,扩展至200人,,4,100,,ENT-PLR batch 2
 T017,1,实体与索引,8,采集名帅与裁判实体,data,data/entities.csv,60,60,done,P2,T008,世界杯冠军教练与知名裁判,,2,60,,ENT-COA/ENT-REF
-T018,1,实体与索引,9,实体表质量抽检,review,data/entities.csv,0,0,done,P0,T014;T017,抽检10%无重复ID/别名可检索,,2,0,,docs/reviews/T018-entities-review.md
+T018,1,实体与索引,9,实体表质量抽检,review,data/entities.csv,0,0,done,P0,T014;T017,抽检10%无重复ID/别名可检索,,2,0,,docs/maintainers/reviews/T018-entities-review.md
 T020,2,术语百科,1,术语批次01:基础规则用语,data,data/knowledge_glossary.csv,50,50,done,P0,T005,覆盖越位/犯规/点球等50条,,3,50,,优先启动
 T021,2,术语百科,2,术语批次02:位置与阵型,data,data/knowledge_glossary.csv,50,50,done,P0,T020,,,3,50,,
 T022,2,术语百科,3,术语批次03:战术黑话,data,data/knowledge_glossary.csv,50,50,done,P1,T021,,,3,50,,
@@ -169,7 +169,7 @@ T228,10,战术与位置,9,战术批次09:点球大战策略(非博彩),data,data
 T229,10,战术与位置,10,战术批次10:青训位置培养,data,data/knowledge_tactics.csv,50,50,done,P2,T228,,,3,50,,WC-TACT-00451–00500
 T230,10,战术与位置,11,战术批次11:数据与战术,data,data/knowledge_tactics.csv,50,50,done,P2,T229,xG等基础概念,,3,50,,WC-TACT-00501–00550
 T232,10,战术与位置,12,战术批次12:补遗战术,data,data/knowledge_tactics.csv,50,50,done,P2,T230,,,3,50,,WC-TACT-00551–00600
-T231,10,战术与位置,13,战术与位置质量抽检,review,data/knowledge_tactics.csv,600,50,done,P1,T232,,,5,50,,docs/reviews/T231-tactics-review.md
+T231,10,战术与位置,13,战术与位置质量抽检,review,data/knowledge_tactics.csv,600,50,done,P1,T232,,,5,50,,docs/maintainers/reviews/T231-tactics-review.md
 T240,11,纪录与统计,1,纪录批次01:总进球纪录,data,data/knowledge_records_stats.csv,50,50,done,P0,T231,,,4,50,,WC-RECD-00001–00050
 T241,11,纪录与统计,2,纪录批次02:单届进球,data,data/knowledge_records_stats.csv,50,50,done,P0,T240,,,4,50,,WC-RECD-00051–00100
 T242,11,纪录与统计,3,纪录批次03:出场与年龄,data,data/knowledge_records_stats.csv,50,50,done,P1,T240,,,4,50,,WC-RECD-00101–00150
@@ -186,14 +186,14 @@ T252,11,纪录与统计,13,纪录批次13:女足纪录,data,data/knowledge_recor
 T253,11,纪录与统计,14,纪录批次14:趣味统计,data,data/knowledge_records_stats.csv,50,50,done,P2,T251,,,3,50,,WC-RECD-00651–00700
 T254,11,纪录与统计,15,纪录批次15:数据FAQ,data,data/knowledge_records_stats.csv,50,50,done,P2,T253,,,3,50,,WC-RECD-00701–00750
 T256,11,纪录与统计,16,纪录批次16:补遗统计,data,data/knowledge_records_stats.csv,50,50,done,P2,T254,,,3,50,,WC-RECD-00751–00800
-T255,11,纪录与统计,17,纪录与统计质量抽检,review,data/knowledge_records_stats.csv,800,50,done,P0,T256,,,6,50,,docs/reviews/T255-records-stats-review.md
+T255,11,纪录与统计,17,纪录与统计质量抽检,review,data/knowledge_records_stats.csv,800,50,done,P0,T256,,,6,50,,docs/maintainers/reviews/T255-records-stats-review.md
 T260,12,裁判与纪律,1,纪律批次01:黄牌规则,data,data/knowledge_discipline.csv,50,50,done,P1,T255,,,3,50,,WC-DISC-00001–00050
 T261,12,裁判与纪律,2,纪律批次02:停赛与累计,data,data/knowledge_discipline.csv,50,50,done,P1,T260,,,3,50,,WC-DISC-00051–00100
 T262,12,裁判与纪律,3,纪律批次03:公平竞赛奖,data,data/knowledge_discipline.csv,50,50,done,P2,T260,,,2,50,,WC-DISC-00101–00150
 T263,12,裁判与纪律,4,纪律批次04:暴力与种族歧视,data,data/knowledge_discipline.csv,50,50,done,P2,T260,,,3,50,,WC-DISC-00151–00200
 T264,12,裁判与纪律,5,纪律批次05:世界杯争议判罚,data,data/knowledge_discipline.csv,50,50,done,P1,T260,,,4,50,,WC-DISC-00201–00250
 T265,12,裁判与纪律,6,纪律批次06:补遗,data,data/knowledge_discipline.csv,50,50,done,P2,T264,,,3,50,,WC-DISC-00251–00300
-T266,12,裁判与纪律,7,裁判与纪律质量抽检,review,data/knowledge_discipline.csv,300,50,done,P1,T265,,,3,50,,docs/reviews/T266-discipline-review.md
+T266,12,裁判与纪律,7,裁判与纪律质量抽检,review,data/knowledge_discipline.csv,300,50,done,P1,T265,,,3,50,,docs/maintainers/reviews/T266-discipline-review.md
 T270,13,场地装备科技,1,科技批次01:足球规则与规格,data,data/knowledge_venues_tech.csv,50,50,done,P2,T266,,,3,50,,WC-VTEC-00001–00050
 T271,13,场地装备科技,2,科技批次02:草皮与气候,data,data/knowledge_venues_tech.csv,50,50,done,P2,T270,,,3,50,,WC-VTEC-00051–00100
 T272,13,场地装备科技,3,科技批次03:经典球场,data,data/knowledge_venues_tech.csv,50,50,done,P2,T270,,,4,50,,WC-VTEC-00101–00150
@@ -202,7 +202,7 @@ T274,13,场地装备科技,5,科技批次05:VAR与门线,data,data/knowledge_ven
 T275,13,场地装备科技,6,科技批次06:转播与鹰眼,data,data/knowledge_venues_tech.csv,50,50,done,P2,T274,,,3,50,,WC-VTEC-00251–00300
 T276,13,场地装备科技,7,科技批次07:装备护具,data,data/knowledge_venues_tech.csv,50,50,done,P2,T274,,,3,50,,WC-VTEC-00301–00350
 T277,13,场地装备科技,8,科技批次08:2026场馆前瞻,data,data/knowledge_venues_tech.csv,50,50,done,P2,T275,time_sensitive,,3,50,,WC-VTEC-00351–00400
-T278,13,场地装备科技,9,场地装备科技质量抽检,review,data/knowledge_venues_tech.csv,400,50,done,P2,T277,,,4,50,,docs/reviews/T278-venues-tech-review.md
+T278,13,场地装备科技,9,场地装备科技质量抽检,review,data/knowledge_venues_tech.csv,400,50,done,P2,T277,,,4,50,,docs/maintainers/reviews/T278-venues-tech-review.md
 T280,14,女子世界杯,1,女足批次01:女足世界杯历史,data,data/knowledge_womens_wc.csv,50,50,done,P1,T278,,,4,50,,WC-WWC-00001–00050
 T281,14,女子世界杯,2,女足批次02:历届冠军与纪录,data,data/knowledge_womens_wc.csv,50,50,done,P1,T280,,,4,50,,WC-WWC-00051–00100
 T282,14,女子世界杯,3,女足批次03:球星与名帅,data,data/knowledge_womens_wc.csv,50,50,done,P1,T281,,,4,50,,WC-WWC-00101–00150
@@ -211,26 +211,26 @@ T284,14,女子世界杯,5,女足批次05:2023澳大利亚新西兰,data,data/kno
 T285,14,女子世界杯,6,女足批次06:2027前瞻,data,data/knowledge_womens_wc.csv,50,50,done,P2,T284,,,3,50,,WC-WWC-00251–00300
 T286,14,女子世界杯,7,女足批次07:常见问题,data,data/knowledge_womens_wc.csv,50,50,done,P2,T285,,,3,50,,WC-WWC-00301–00350
 T287,14,女子世界杯,8,女足批次08:补遗,data,data/knowledge_womens_wc.csv,50,50,done,P2,T286,,,3,50,,WC-WWC-00351–00400
-T288,14,女子世界杯,9,女子世界杯质量抽检,review,data/knowledge_womens_wc.csv,400,50,done,P1,T287,,,4,50,,docs/reviews/T288-womens-wc-review.md
+T288,14,女子世界杯,9,女子世界杯质量抽检,review,data/knowledge_womens_wc.csv,400,50,done,P1,T287,,,4,50,,docs/maintainers/reviews/T288-womens-wc-review.md
 T290,15,文化观赛,1,文化批次01:球迷文化,data,data/knowledge_culture.csv,50,50,done,P2,T288,,,3,50,,WC-CULT-00001–00050
 T291,15,文化观赛,2,文化批次02:观赛礼仪,data,data/knowledge_culture.csv,50,50,done,P2,T290,,,3,50,,WC-CULT-00051–00100
 T292,15,文化观赛,3,文化批次03:主题曲与口号,data,data/knowledge_culture.csv,50,50,done,P2,T290,,,3,50,,WC-CULT-00101–00150
 T293,15,文化观赛,4,文化批次04:吉祥物与奖杯,data,data/knowledge_culture.csv,50,50,done,P2,T292,,,3,50,,WC-CULT-00151–00200
 T294,15,文化观赛,5,文化批次05:世界杯与旅游,data,data/knowledge_culture.csv,50,50,done,P2,T293,,,3,50,,WC-CULT-00201–00250
 T295,15,文化观赛,6,文化批次06:媒体与解说,data,data/knowledge_culture.csv,50,50,done,P2,T294,,,3,50,,WC-CULT-00251–00300
-T296,15,文化观赛,7,文化观赛质量抽检,review,data/knowledge_culture.csv,300,50,done,P2,T295,,,3,50,,docs/reviews/T296-culture-review.md
+T296,15,文化观赛,7,文化观赛质量抽检,review,data/knowledge_culture.csv,300,50,done,P2,T295,,,3,50,,docs/maintainers/reviews/T296-culture-review.md
 T300,16,健康训练,1,健康批次01:常见运动伤病(科普),data,data/knowledge_health_training.csv,50,50,done,P2,T296,非医疗诊断,,3,50,,WC-HLTH-00001–00050
 T301,16,健康训练,2,健康批次02:体能与恢复,data,data/knowledge_health_training.csv,50,50,done,P2,T300,,,3,50,,WC-HLTH-00051–00100
 T302,16,健康训练,3,健康批次03:青训与选材,data,data/knowledge_health_training.csv,50,50,done,P2,T301,,,3,50,,WC-HLTH-00101–00150
 T303,16,健康训练,4,健康批次04:营养与作息(科普),data,data/knowledge_health_training.csv,50,50,done,P2,T302,,,3,50,,WC-HLTH-00151–00200
-T304,16,健康训练,5,健康训练质量抽检,review,data/knowledge_health_training.csv,200,50,done,P2,T303,,,3,50,,docs/reviews/T304-health-training-review.md
+T304,16,健康训练,5,健康训练质量抽检,review,data/knowledge_health_training.csv,200,50,done,P2,T303,,,3,50,,docs/maintainers/reviews/T304-health-training-review.md
 T400,17,Skill集成,1,编写SKILL.md骨架,skill,.cursor/skills/world-cup/SKILL.md,0,0,done,P0,T030,含触发词/拒答/检索流程,,4,0,,
-T401,17,Skill集成,2,编写检索参考文档,skill,docs/skill-retrieval-guide.md,0,0,done,P0,T400,说明如何查CSV回答,,3,0,,
+T401,17,Skill集成,2,编写检索参考文档,skill,docs/maintainers/skill-retrieval-guide.md,0,0,done,P0,T400,说明如何查CSV回答,,3,0,,
 T402,17,Skill集成,3,编写FAQ示例集,skill,docs/examples.md,0,50,done,P1,T400,50组问答示例,,4,50,,
-T403,17,Skill集成,4,赌博类拒答测试用例,skill,docs/refusal-testcases.md,0,0,done,P0,T401,≥20条拒答场景,,2,0,,
+T403,17,Skill集成,4,赌博类拒答测试用例,skill,docs/maintainers/refusal-testcases.md,0,0,done,P0,T401,≥20条拒答场景,,2,0,,
 T404,17,Skill集成,5,Skill端到端测试,review,.cursor/skills/world-cup/SKILL.md,0,75,done,P0,T403,覆盖规则/历史/人物/拒答,,4,75,,
 T500,18,全库验收,1,合并全库CSV,data,data/knowledge_all.csv,10000,0,done,P0,T304;T404,去重后总量≥10000,,4,10910,,knowledge_all 10910 rows
 T501,18,全库验收,2,全库赌博关键词扫描,review,data/knowledge_all.csv,10000,0,done,P0,T500,零命中赔率/盘口/投注,,2,0,,零命中
 T502,18,全库验收,3,全库ID与关联检查,review,data/knowledge_all.csv,10000,0,done,P0,T500,无重复ID/无效related_ids,,3,0,,ID/related_ids OK
-T503,18,全库验收,4,随机抽检500条,review,data/knowledge_all.csv,500,500,done,P0,T502,准确率≥95%,,8,500,,docs/reviews/T503-full-sample-review.md;复验2026-06-05
+T503,18,全库验收,4,随机抽检500条,review,data/knowledge_all.csv,500,500,done,P0,T502,准确率≥95%,,8,500,,docs/maintainers/reviews/T503-full-sample-review.md;复验2026-06-05
 T504,18,全库验收,5,发布v1.0.0,release,CHANGELOG.md,0,0,done,P0,T503,文档与数据版本对齐,,2,0,,CHANGELOG v1.0.1

@@ -2,7 +2,7 @@
 """Generate T015: 100 legendary player entities (append).
 
 Network: none (local structured data only). Outbound HTTP must use
-fetch_utils.RateLimitedFetcher (>=1s/request); see docs/data-collection-policy.md
+fetch_utils.RateLimitedFetcher (>=1s/request); see docs/maintainers/data-collection-policy.md
 and .cursor/rules/world-cup-data-collection.mdc."""
 
 from __future__ import annotations

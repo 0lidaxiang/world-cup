@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate T086: 70 World Cup history entries — 争议事件与改革 (append).
 
-Network: none (local structured data only). Outbound HTTP must use fetch_utils.RateLimitedFetcher (>=1s/request); see docs/data-collection-policy.md and .cursor/rules/world-cup-data-collection.mdc."""
+Network: none (local structured data only). Outbound HTTP must use fetch_utils.RateLimitedFetcher (>=1s/request); see docs/maintainers/data-collection-policy.md and .cursor/rules/world-cup-data-collection.mdc."""
 
 from __future__ import annotations
 

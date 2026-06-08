@@ -60,7 +60,7 @@ def main() -> int:
     parser.add_argument(
         "--output",
         type=Path,
-        default=ROOT / "data" / "provenance_audit.csv",
+        default=ROOT / "docs" / "maintainers" / "provenance_audit.csv",
         help="Output provenance audit CSV",
     )
     parser.add_argument("--dry-run", action="store_true", help="Print counts only")

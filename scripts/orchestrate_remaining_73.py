@@ -425,7 +425,7 @@ def review_entities() -> None:
 # ---------------------------------------------------------------------------
 
 def update_tasks(done: dict[str, tuple[int, str]]) -> None:
-    path = ROOT / "data" / "tasks.csv"
+    path = ROOT / "docs" / "maintainers" / "tasks.csv"
     rows = list(csv.DictReader(path.open(encoding="utf-8")))
     fieldnames = rows[0].keys() if rows else []
     for r in rows:
@@ -491,7 +491,7 @@ def sample_review_500(path: Path) -> None:
 
 
 def write_changelog(total: int) -> None:
-    path = ROOT / "CHANGELOG.md"
+    path = ROOT / "docs" / "maintainers" / "CHANGELOG-internal.md"
     path.write_text(f"""# Changelog
 
 ## v1.0.0 — 2026-06-05
@@ -626,15 +626,15 @@ def main() -> int:
 
     done["T016"] = (100, "ENT-PLR batch 2")
     done["T017"] = (60, "ENT-COA/ENT-REF")
-    done["T018"] = (0, "docs/reviews/T018-entities-review.md")
+    done["T018"] = (0, "docs/maintainers/reviews/T018-entities-review.md")
     for tid, notes in [
-        ("T231", "docs/reviews/T231-tactics-review.md"),
-        ("T255", "docs/reviews/T255-records-stats-review.md"),
-        ("T266", "docs/reviews/T266-discipline-review.md"),
-        ("T278", "docs/reviews/T278-venues-tech-review.md"),
-        ("T288", "docs/reviews/T288-womens-wc-review.md"),
-        ("T296", "docs/reviews/T296-culture-review.md"),
-        ("T304", "docs/reviews/T304-health-training-review.md"),
+        ("T231", "docs/maintainers/reviews/T231-tactics-review.md"),
+        ("T255", "docs/maintainers/reviews/T255-records-stats-review.md"),
+        ("T266", "docs/maintainers/reviews/T266-discipline-review.md"),
+        ("T278", "docs/maintainers/reviews/T278-venues-tech-review.md"),
+        ("T288", "docs/maintainers/reviews/T288-womens-wc-review.md"),
+        ("T296", "docs/maintainers/reviews/T296-culture-review.md"),
+        ("T304", "docs/maintainers/reviews/T304-health-training-review.md"),
     ]:
         done[tid] = (50 if tid != "T255" else 50, notes)
 
@@ -678,7 +678,7 @@ def main() -> int:
     done["T500"] = (total, f"knowledge_all {total} rows")
     done["T501"] = (0, "零命中")
     done["T502"] = (0, "ID/related_ids OK")
-    done["T503"] = (500, "docs/reviews/T503-full-sample-review.md")
+    done["T503"] = (500, "docs/maintainers/reviews/T503-full-sample-review.md")
     done["T504"] = (0, "CHANGELOG v1.0.0")
 
     update_tasks(done)

@@ -2,7 +2,7 @@
 """Generate T100: 90 World Cup edition entries — 第01届1930乌拉圭 (new file).
 
 Network: none (local structured data only). Outbound HTTP must use
-fetch_utils.RateLimitedFetcher (>=1s/request); see docs/data-collection-policy.md
+fetch_utils.RateLimitedFetcher (>=1s/request); see docs/maintainers/data-collection-policy.md
 and .cursor/rules/world-cup-data-collection.mdc."""
 
 from __future__ import annotations

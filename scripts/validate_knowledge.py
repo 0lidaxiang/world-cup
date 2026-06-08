@@ -7,7 +7,7 @@ Usage:
   python scripts/validate_knowledge.py --all
   python scripts/validate_knowledge.py data/batches/T020_glossary.csv --known-ids data/knowledge_glossary.csv
 
-Network: none (local structured data). Outbound HTTP must use fetch_utils.RateLimitedFetcher (>=1s/request); see docs/data-collection-policy.md and .cursor/rules/world-cup-data-collection.mdc."""
+Network: none (local structured data). Outbound HTTP must use fetch_utils.RateLimitedFetcher (>=1s/request); see docs/maintainers/data-collection-policy.md and .cursor/rules/world-cup-data-collection.mdc."""
 
 from __future__ import annotations
 

@@ -20,7 +20,7 @@
 | 术语、黑话、缩写 | `knowledge_glossary.csv` |
 | 赛制、积分、抽签、扩军 | `knowledge_tournament_format.csv` |
 | 世界杯通史、时代概览 | `knowledge_wc_history.csv` |
-| 某一届世界杯 | `knowledge_wc_editions.csv`（ID 号段见 `docs/id-conventions.md` §2.3） |
+| 某一届世界杯 | `knowledge_wc_editions.csv`（ID 号段见 [`id-conventions.md`](id-conventions.md) §2.3） |
 | 球队、国家队 | `knowledge_national_teams.csv` |
 | 球员、教练 | `knowledge_players_coaches.csv` |
 | 不确定 / 跨类 | `knowledge_all.csv`（合并全库） |
@@ -92,4 +92,4 @@ python3 scripts/progress_report.py --next 10
 ## 七、外网补充（仅维护采集时）
 
 - 必须 `scripts/fetch_utils.py`，间隔 ≥1 秒
-- 见 `docs/data-collection-policy.md`
+- 见 [`data-collection-policy.md`](data-collection-policy.md)

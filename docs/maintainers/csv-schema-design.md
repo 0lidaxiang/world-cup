@@ -78,7 +78,7 @@
 |------|------|
 | `non_medical` | 健康与训练类；Skill 回答须追加非医疗免责声明 |
 | `fact_restated` | 内容为事实重述，非逐字摘录官方原文 |
-| `external_fetch` | 曾通过外网采集；须在 `data/provenance_audit.csv` 有对应行 |
+| `external_fetch` | 曾通过外网采集；须在 `docs/maintainers/provenance_audit.csv` 有对应行 |
 
 ---
 
@@ -122,7 +122,7 @@
 | `country_code` | ISO 国家码（如适用） |
 | `related_knowledge_ids` | 关联知识 ID |
 
-### 4.2 外采溯源旁路表 `data/provenance_audit.csv`
+### 4.2 外采溯源旁路表 `docs/maintainers/provenance_audit.csv`
 
 不修改主表 26 列；凡 `external_fetch` 或联网采集的条目在此登记，便于审计。
 

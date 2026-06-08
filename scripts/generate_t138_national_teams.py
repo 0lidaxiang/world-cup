@@ -2,7 +2,7 @@
 """Generate T138: 60 national team entries — 乌拉圭 (append).
 
 Network: none (local structured data only). Outbound HTTP must use
-fetch_utils.RateLimitedFetcher (>=1s/request); see docs/data-collection-policy.md
+fetch_utils.RateLimitedFetcher (>=1s/request); see docs/maintainers/data-collection-policy.md
 and .cursor/rules/world-cup-data-collection.mdc."""
 
 from __future__ import annotations

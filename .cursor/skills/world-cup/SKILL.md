@@ -62,13 +62,16 @@ description: >-
 
 ### 5. 维护与采集（Agent）
 
-- 批量任务见 [`data/tasks.csv`](../../data/tasks.csv)；进度：`python3 scripts/progress_report.py`
-- 写入知识库后：`python3 scripts/validate_knowledge.py <file> --strict`
-- **外网采集**：必须遵守 [`docs/data-collection-policy.md`](../../docs/data-collection-policy.md)，使用 `scripts/fetch_utils.py`，**≥1 秒/请求**
-- **外采溯源**：联网写入须在 `data/provenance_audit.csv` 登记 `source_url`、`collected_at`、`rewrite_mode`（禁止 `verbatim_excerpt`）；可运行 `scripts/bootstrap_provenance_audit.py` 生成默认行
+维护者文档见 [`docs/maintainers/`](../../docs/maintainers/README.md)：
+
+- 任务台账：`docs/maintainers/tasks.csv`；进度：`python3 scripts/progress_report.py`
+- 写入后校验：`python3 scripts/validate_knowledge.py <file> --strict`
+- 外网采集：遵守 [`docs/maintainers/data-collection-policy.md`](../../docs/maintainers/data-collection-policy.md)，使用 `scripts/fetch_utils.py`，**≥1 秒/请求**
+- 外采溯源：在 `docs/maintainers/provenance_audit.csv` 登记；可运行 `scripts/bootstrap_provenance_audit.py`
 
 ## 参考文档
 
-- Schema：[`docs/csv-schema-design.md`](../../docs/csv-schema-design.md)
-- ID 与禁词：[`docs/id-conventions.md`](../../docs/id-conventions.md)
-- 项目 Agent 总则：[`AGENTS.md`](../../AGENTS.md)
+| 受众 | 文档 |
+|------|------|
+| 用户 | [`docs/examples.md`](../../docs/examples.md)、[`docs/compliance.md`](../../docs/compliance.md) |
+| 维护者 | [`docs/maintainers/`](../../docs/maintainers/README.md)（Schema、ID 规范、采集 SOP） |

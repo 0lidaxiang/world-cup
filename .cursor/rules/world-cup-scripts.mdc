@@ -23,7 +23,7 @@ body = fetcher.get("https://example.com/data")
 ## 知识批次生成
 
 - 数据任务：写入后运行 `validate_knowledge.py {csv} --strict`，再 `merge_batches.py --build-all --skip-validate`（或按任务说明）。
-- ID 与禁赌词：`docs/id-conventions.md`、`docs/csv-schema-design.md`。
+- ID 与禁赌词：`docs/maintainers/id-conventions.md`、`docs/maintainers/csv-schema-design.md`。
 - 纯本地生成脚本应在 docstring 标明 `Network: none (local structured data only)`。
 
 ## 新增脚本命名

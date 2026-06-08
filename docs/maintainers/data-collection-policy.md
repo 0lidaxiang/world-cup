@@ -25,10 +25,10 @@
 2. 必须使用 Firecrawl、MCP 搜索、脚本 `requests` 等时：
    - 串行请求，间隔 ≥ 1 秒；
    - 单次会话抓取 URL 数量设上限（建议 ≤ 30），超出则分批、下次会话继续；
-   - 在 `tasks.csv` 的 `notes` 记录数据源与抓取时间，便于复查。
+   - 在 `docs/maintainers/tasks.csv` 的 `notes` 记录数据源与抓取时间，便于复查。
 3. 尊重目标站 `robots.txt` 与版权；不抓取赌博、赔率、盘口类页面（与 [`id-conventions.md`](id-conventions.md) §7.3 一致）。
-4. 联网采集完成后，在 `data/provenance_audit.csv` 补全 `knowledge_id`、`source_url`、`collected_at`、`rewrite_mode`（禁止 `verbatim_excerpt`）。
-5. 定期或大规模采集前运行 `python3 scripts/audit_fetch_compliance.py` 留存 robots.txt 快照（见 [`compliance.md`](compliance.md)）。
+4. 联网采集完成后，在 [`provenance_audit.csv`](provenance_audit.csv) 补全 `knowledge_id`、`source_url`、`collected_at`、`rewrite_mode`（禁止 `verbatim_excerpt`）。
+5. 定期或大规模采集前运行 `python3 scripts/audit_fetch_compliance.py` 留存 robots.txt 快照（见 [`../compliance.md`](../compliance.md)）。
 
 ---
 
@@ -60,10 +60,10 @@ html = fetcher.get("https://example.com/page")  # 自动等待 ≥1s
 |------|------|
 | [`.cursor/rules/world-cup-data-collection.mdc`](../.cursor/rules/world-cup-data-collection.mdc) | **Cursor 强制规则**（`alwaysApply: true`） |
 | [`.cursor/rules/world-cup-scripts.mdc`](../.cursor/rules/world-cup-scripts.mdc) | `scripts/**/*.py` 编写约定 |
-| [`AGENTS.md`](../AGENTS.md) | Agent 总览与必须遵守项 |
+| [`AGENTS.md`](AGENTS.md) | Agent 总览与必须遵守项 |
 | [`scripts/fetch_utils.py`](../scripts/fetch_utils.py) | 限速 HTTP 工具 |
-| [`docs/id-conventions.md`](id-conventions.md) | 禁赌关键词 |
-| [`data/tasks.csv`](../data/tasks.csv) | 任务状态与 notes |
+| [`id-conventions.md`](id-conventions.md) | 禁赌关键词 |
+| [`tasks.csv`](tasks.csv) | 任务状态与 notes |
 
 ---
 

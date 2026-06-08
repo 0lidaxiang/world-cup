@@ -2,7 +2,7 @@
 """Generate T122: 80 World Cup edition entries — 第23届2026美加墨(前瞻) (append).
 
 Network: none (local structured data only). Outbound HTTP must use
-fetch_utils.RateLimitedFetcher (>=1s/request); see docs/data-collection-policy.md
+fetch_utils.RateLimitedFetcher (>=1s/request); see docs/maintainers/data-collection-policy.md
 and .cursor/rules/world-cup-data-collection.mdc."""
 
 from __future__ import annotations

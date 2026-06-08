@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate T022 glossary batch: 50 tactical slang terms (append).
 
-Network: none (local structured data). Outbound HTTP must use fetch_utils.RateLimitedFetcher (>=1s/request); see docs/data-collection-policy.md and .cursor/rules/world-cup-data-collection.mdc."""
+Network: none (local structured data). Outbound HTTP must use fetch_utils.RateLimitedFetcher (>=1s/request); see docs/maintainers/data-collection-policy.md and .cursor/rules/world-cup-data-collection.mdc."""
 
 from __future__ import annotations
 

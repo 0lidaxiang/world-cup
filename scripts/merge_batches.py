@@ -18,7 +18,7 @@ Usage:
   # Preview without writing
   python scripts/merge_batches.py data/batches/T020_glossary.csv --dry-run
 
-Network: none (local structured data). Outbound HTTP must use fetch_utils.RateLimitedFetcher (>=1s/request); see docs/data-collection-policy.md and .cursor/rules/world-cup-data-collection.mdc."""
+Network: none (local structured data). Outbound HTTP must use fetch_utils.RateLimitedFetcher (>=1s/request); see docs/maintainers/data-collection-policy.md and .cursor/rules/world-cup-data-collection.mdc."""
 
 from __future__ import annotations
 

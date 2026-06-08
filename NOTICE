@@ -15,7 +15,7 @@ This repository contains structured Chinese Q&A entries about association
 football and the FIFA World Cup. Entries cite factual sources in the
 `source_ref` field (e.g. IFAB Laws of the Game, FIFA historical records).
 Provenance for externally fetched rows is recorded separately in
-`data/provenance_audit.csv` when applicable.
+`docs/maintainers/provenance_audit.csv` when applicable.
 
 1. FIFA / World Cup
    - FIFA, FIFA World Cup, and related names are trademarks of FIFA.
@@ -50,5 +50,5 @@ USAGE LIMITATIONS (NOT LEGAL ADVICE)
 - Users are responsible for verifying time-sensitive rules with official
   FIFA/IFAB publications.
 
-See docs/compliance.md for operational policy, fetch rate limits, and
-robots.txt audit procedures.
+See docs/compliance.md for operational policy. Maintainer fetch rules:
+docs/maintainers/data-collection-policy.md

@@ -1,7 +1,7 @@
 # 世界杯常识知识库 — 长期任务计划
 
 > 目标：10,000 条常识 + World Cup Skill  
-> 任务主表：[`data/tasks.csv`](../data/tasks.csv)（**235 项**，可逐条更新 `status` / `actual_rows`）
+> 任务主表：[`tasks.csv`](tasks.csv)（**235 项**，可逐条更新 `status` / `actual_rows`）
 
 ---
 
@@ -179,13 +179,13 @@ flowchart TD
 
 - 外网限速：`.cursor/rules/world-cup-data-collection.mdc`（**alwaysApply**）
 - 脚本约定：`.cursor/rules/world-cup-scripts.mdc`（`scripts/**/*.py`）
-- 总览：`AGENTS.md`
+- 总览：[`AGENTS.md`](AGENTS.md)
 
 ### 领任务（给 Agent 的指令模板）
 
 ```
 请执行任务 T041：
-- 读取 data/tasks.csv 中 T041 的行
+- 读取 `docs/maintainers/tasks.csv` 中 T041 的行
 - 向 data/knowledge_rules.csv 追加 50 条越位规则常识
 - 完成后更新 tasks.csv：status=review, actual_rows=50
 ```
@@ -211,4 +211,4 @@ python3 scripts/progress_report.py
 | 全库验收 | ✅ T500–T504 完成（`validate --all/--batches --strict` 零 error） |
 | 发布 | ✅ **CHANGELOG v1.0.1** |
 
-**维护建议：** 后续增量批次走 `validate_knowledge.py {csv} --strict` → `merge_batches.py --build-all` → `progress_report.py`；质量债见 `docs/reviews/quality-debt-report.md`。
+**维护建议：** 后续增量批次走 `validate_knowledge.py {csv} --strict` → `merge_batches.py --build-all` → `progress_report.py`；质量债见 [`reviews/quality-debt-report.md`](reviews/quality-debt-report.md)。

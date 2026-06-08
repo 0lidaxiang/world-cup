@@ -2,7 +2,7 @@
 
 **日期**: 2026-06-05（复验）  
 **对象**: `.cursor/skills/world-cup/SKILL.md`  
-**依赖**: T403 `docs/refusal-testcases.md`、T402 `docs/examples.md`
+**依赖**: T403 `docs/maintainers/refusal-testcases.md`、T402 `docs/examples.md`
 
 ## 测试范围
 

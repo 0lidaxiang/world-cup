@@ -20,10 +20,10 @@ alwaysApply: true
 
 - [ ] 新建/修改 `scripts/*.py` 时，若含联网逻辑 → 只用 `RateLimitedFetcher` 或显式 `sleep_between_requests()`
 - [ ] 文件头 docstring 注明：本脚本是否访问外网；若否，写「本地数据 only」
-- [ ] 不在脚本中硬编码赌博/赔率类抓取源（见 `docs/id-conventions.md` §7.3）
+- [ ] 不在脚本中硬编码赌博/赔率类抓取源（见 `docs/maintainers/id-conventions.md` §7.3）
 
 ## 权威文档
 
-- 细则：`docs/data-collection-policy.md`
+- 细则：`docs/maintainers/data-collection-policy.md`
 - 工具：`scripts/fetch_utils.py`
-- 任务 SOP：执行 `data/tasks.csv` 时与拒答/校验规范一并遵守
+- 任务 SOP：执行 `docs/maintainers/tasks.csv` 时与拒答/校验规范一并遵守

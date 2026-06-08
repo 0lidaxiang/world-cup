@@ -3,7 +3,7 @@
 Rate-limited HTTP helpers for world-cup data collection scripts.
 
 Policy: minimum 1 second between outbound requests.
-See docs/data-collection-policy.md and .cursor/rules/world-cup-data-collection.mdc.
+See docs/maintainers/data-collection-policy.md and .cursor/rules/world-cup-data-collection.mdc.
 """
 
 from __future__ import annotations
