@@ -1,0 +1,54 @@
+World Cup Knowledge Base (world-cup)
+Copyright 2026 Contributors
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this work except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+================================================================================
+THIRD-PARTY DATA SOURCES AND ATTRIBUTION BOUNDARIES
+================================================================================
+
+This repository contains structured Chinese Q&A entries about association
+football and the FIFA World Cup. Entries cite factual sources in the
+`source_ref` field (e.g. IFAB Laws of the Game, FIFA historical records).
+Provenance for externally fetched rows is recorded separately in
+`data/provenance_audit.csv` when applicable.
+
+1. FIFA / World Cup
+   - FIFA, FIFA World Cup, and related names are trademarks of FIFA.
+   - This project does NOT include FIFA logos, official posters, broadcast
+     footage, or proprietary visual assets unless explicitly licensed.
+   - Text entries are factual restatements for educational reference; they
+     are NOT verbatim reproductions of FIFA publications unless a row is
+     explicitly marked `rewrite_mode=verbatim_excerpt` in the provenance
+     audit (such rows must not be published in this knowledge base).
+
+2. IFAB (International Football Association Board)
+   - Laws of the Game and IFAB materials are subject to IFAB/FIFA copyright
+     and licensing terms on their official sites.
+   - Rule summaries here are paraphrased for non-commercial educational use;
+     consult https://www.theifab.com for authoritative wording.
+
+3. National associations, media archives, and historical records
+   - Biographical and statistical facts may reference public historical
+     records. No claim of endorsement by any federation or player.
+
+4. Health and training entries
+   - Content is general football-culture / sports-science popularization.
+   - NOT medical advice, diagnosis, or treatment guidance.
+
+================================================================================
+USAGE LIMITATIONS (NOT LEGAL ADVICE)
+================================================================================
+
+- For non-commercial reference and football culture / education only.
+- MUST NOT be used for gambling, betting, lottery, odds, or wagering.
+- MUST NOT be used as a substitute for professional medical advice.
+- Users are responsible for verifying time-sensitive rules with official
+  FIFA/IFAB publications.
+
+See docs/compliance.md for operational policy, fetch rate limits, and
+robots.txt audit procedures.

@@ -69,8 +69,16 @@
 | `confidence` | enum | ✓ | 可信度 | `official` / `verified` / `common_knowledge` |
 | `source_type` | enum | | 来源类型 | `FIFA` / `IFAB` / `historical_record` / `media_archive` |
 | `source_ref` | string | | 来源简述或 URL | `IFAB Laws of the Game 2024/25` |
-| `content_flags` | text | | 内容标记，逗号分隔 | `time_sensitive,rule_change_2026` |
+| `content_flags` | text | | 内容标记，逗号分隔 | `time_sensitive,rule_change_2026,non_medical` |
 | `updated_at` | date | ✓ | 最后更新日期 ISO | `2026-06-03` |
+
+**`content_flags` 扩展（合规）**
+
+| flag | 说明 |
+|------|------|
+| `non_medical` | 健康与训练类；Skill 回答须追加非医疗免责声明 |
+| `fact_restated` | 内容为事实重述，非逐字摘录官方原文 |
+| `external_fetch` | 曾通过外网采集；须在 `data/provenance_audit.csv` 有对应行 |
 
 ---
 
@@ -114,7 +122,22 @@
 | `country_code` | ISO 国家码（如适用） |
 | `related_knowledge_ids` | 关联知识 ID |
 
-### 4.2 拒答策略表 `data/refusal_policy.csv`
+### 4.2 外采溯源旁路表 `data/provenance_audit.csv`
+
+不修改主表 26 列；凡 `external_fetch` 或联网采集的条目在此登记，便于审计。
+
+| 列名 | 说明 |
+|------|------|
+| `knowledge_id` | 主表 `id` |
+| `source_url` | 采集 URL（可选） |
+| `collected_at` | 采集日期 ISO |
+| `rewrite_mode` | `local_structured` / `fact_restated` / `verbatim_excerpt`（后者禁止入库） |
+| `fetch_method` | `none` / `rate_limited_script` / `agent_manual` |
+| `notes` | 备注 |
+
+批量生成默认行：`python3 scripts/bootstrap_provenance_audit.py`。详见 [`compliance.md`](compliance.md)。
+
+### 4.3 拒答策略表 `data/refusal_policy.csv`
 
 Skill 层使用，**不进入**常知识库正文；定义哪些意图必须友好拒答。
 

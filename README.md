@@ -99,6 +99,7 @@ world-cup/
 ├── docs/
 │   ├── examples.md                     # 50 组 FAQ 示例
 │   ├── skill-retrieval-guide.md        # 检索逻辑说明
+│   ├── compliance.md                   # 合规与溯源规范
 │   └── csv-schema-design.md            # 数据字段设计
 ├── scripts/                            # 校验与维护脚本
 ├── AGENTS.md                           # 数据采集 Agent 规范
@@ -128,11 +129,20 @@ python3 scripts/validate_knowledge.py --batches --strict
 
 本知识库 **不包含** 赌博、彩票、赔率、盘口、投注相关内容。Skill 层对相应用户意图单独拒答。详见 `docs/id-conventions.md`。
 
+**使用限制（重要）：**
+
+- 仅供**非商业参考**与足球文化/常识科普
+- **不得**用于赌博、投注、赔率分析或相关决策
+- **不得**作为医疗诊断、处方或康复依据；健康类回答含统一免责声明
+- 不表示与 FIFA、各足协或任何第三方的官方授权或背书
+
+完整说明见 [`docs/compliance.md`](docs/compliance.md)、[`NOTICE`](NOTICE)。
+
 ---
 
 ## 许可证
 
-见 [LICENSE](LICENSE)。
+见 [LICENSE](LICENSE)（Apache 2.0）。第三方数据来源与商标边界见 [NOTICE](NOTICE)。
 
 ## 相关链接
 

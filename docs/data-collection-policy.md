@@ -27,6 +27,8 @@
    - 单次会话抓取 URL 数量设上限（建议 ≤ 30），超出则分批、下次会话继续；
    - 在 `tasks.csv` 的 `notes` 记录数据源与抓取时间，便于复查。
 3. 尊重目标站 `robots.txt` 与版权；不抓取赌博、赔率、盘口类页面（与 [`id-conventions.md`](id-conventions.md) §7.3 一致）。
+4. 联网采集完成后，在 `data/provenance_audit.csv` 补全 `knowledge_id`、`source_url`、`collected_at`、`rewrite_mode`（禁止 `verbatim_excerpt`）。
+5. 定期或大规模采集前运行 `python3 scripts/audit_fetch_compliance.py` 留存 robots.txt 快照（见 [`compliance.md`](compliance.md)）。
 
 ---
 

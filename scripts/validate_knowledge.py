@@ -77,6 +77,9 @@ CONTENT_FLAGS = {
     "rule_change_2026",
     "deprecated",
     "needs_review",
+    "non_medical",
+    "fact_restated",
+    "external_fetch",
 }
 LANGUAGES = {"zh-CN"}
 

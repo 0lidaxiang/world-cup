@@ -12,6 +12,9 @@
 ## 2. 内容合规
 
 - 禁止采集/生成赌博、彩票、赔率、盘口、投注相关内容（见 `docs/id-conventions.md` §7.3）。
+- 健康与训练条目须带 `content_flags=non_medical`；Skill 回答追加非医疗免责声明。
+- 外网采集条目须在 `data/provenance_audit.csv` 登记 URL、采集时间与 `rewrite_mode`（见 `docs/compliance.md`）。
+- 使用前阅读 `NOTICE` 与 `docs/compliance.md`：非商业参考、禁博彩、禁作诊疗依据。
 
 ## 3. 数据质量门禁
 

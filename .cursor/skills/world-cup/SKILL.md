@@ -46,12 +46,26 @@ description: >-
 - 不输出赔率、盘口、投注方式、购彩渠道
 - 无可靠条目时如实说明「知识库暂无该条」，可建议用户换问法或相关话题
 - 引用条目时可注明 `id`（如 `WC-RULE-00042`）便于维护
+- **健康与训练**：当 `category_l1` 为「健康与训练」或 `content_flags` 含 `non_medical` 时，回答末尾须追加：
+  > **免责声明**：以上内容仅供足球文化与运动科普参考，不构成医疗建议或诊疗依据。如有伤病或健康问题，请咨询专业医疗机构。
 
-### 4. 维护与采集（Agent）
+### 4. 使用与合规边界
+
+本 Skill 及知识库输出 **仅供非商业参考**，用于足球文化/常识科普：
+
+- **不得**用于赌博、彩票、赔率、盘口、投注或相关营销
+- **不得**作为医疗诊断、处方或康复方案的依据
+- 不嵌入 FIFA/世界杯官方 logo、海报等受保护视觉素材；不暗示官方背书
+- 涉及时效规则仍以 FIFA/IFAB 官方公布为准
+
+详见 [`docs/compliance.md`](../../docs/compliance.md) 与 [`NOTICE`](../../NOTICE)。
+
+### 5. 维护与采集（Agent）
 
 - 批量任务见 [`data/tasks.csv`](../../data/tasks.csv)；进度：`python3 scripts/progress_report.py`
 - 写入知识库后：`python3 scripts/validate_knowledge.py <file> --strict`
 - **外网采集**：必须遵守 [`docs/data-collection-policy.md`](../../docs/data-collection-policy.md)，使用 `scripts/fetch_utils.py`，**≥1 秒/请求**
+- **外采溯源**：联网写入须在 `data/provenance_audit.csv` 登记 `source_url`、`collected_at`、`rewrite_mode`（禁止 `verbatim_excerpt`）；可运行 `scripts/bootstrap_provenance_audit.py` 生成默认行
 
 ## 参考文档
 
